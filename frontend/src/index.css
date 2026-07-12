@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-200;
+  }
+
+  ::selection {
+    @apply bg-brand-500/20 text-brand-700;
+  }
+
+  .dark ::selection {
+    @apply bg-brand-400/30 text-brand-200;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60;
+  }
+  .dark .glass {
+    @apply bg-slate-900/70 backdrop-blur-xl border border-slate-800/60;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-slate-200/60 shadow-card;
+  }
+  .dark .glass-card {
+    @apply bg-slate-900/80 backdrop-blur-xl border border-slate-800/60;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-slate-200/70 rounded-lg;
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2s infinite linear;
+  }
+  .dark .skeleton {
+    @apply bg-slate-800;
+  }
+
+  .btn-press {
+    @apply transition-all duration-200 active:scale-[0.97];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-smooth hover:-translate-y-1 hover:shadow-float;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 via-brand-500 to-accent-purple bg-clip-text text-transparent;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgb(148 163 184 / 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(148 163 184 / 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .mesh-bg {
+    background-color: #f8fafc;
+    background-image:
+      radial-gradient(at 0% 0%, rgb(219 234 254 / 0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgb(221 214 254 / 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgb(209 250 229 / 0.3) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgb(254 215 170 / 0.25) 0px, transparent 50%);
+  }
+  .dark .mesh-bg {
+    background-color: #020617;
+    background-image:
+      radial-gradient(at 0% 0%, rgb(30 58 138 / 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgb(76 29 149 / 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgb(6 78 59 / 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgb(124 45 18 / 0.15) 0px, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; animation-fill-mode: both; }
+  .animate-delay-200 { animation-delay: 200ms; animation-fill-mode: both; }
+  .animate-delay-300 { animation-delay: 300ms; animation-fill-mode: both; }
+  .animate-delay-400 { animation-delay: 400ms; animation-fill-mode: both; }
+  .animate-delay-500 { animation-delay: 500ms; animation-fill-mode: both; }
+}
