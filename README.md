@@ -161,7 +161,6 @@ http://localhost:5173
 **Sneha R. Baviskar**
 
 MCA Student
-Savitribai Phule Pune University
 
 ## License
 
