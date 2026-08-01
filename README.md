@@ -6,7 +6,7 @@ A full-stack university course registration platform that enables students to en
 
 # Live Demo
 
-**Link:**
+**Link:https://reasonable-purpose-production-17cd.up.railway.app/#/**
 
 ---
 
